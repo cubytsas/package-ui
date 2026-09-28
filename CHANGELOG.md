@@ -9,6 +9,7 @@ Initial public release.
 ### Added
 
 - `ui.css` primitives built on `@cubyt/style` tokens: buttons, icon buttons, fields, inputs, chips, notices, key/value rows, code blocks, list items, spinner, progress bar and keyboard hints, with light and dark mode.
+- Refined button hover feedback and added a subtle animated affordance to interactive list items, with reduced-motion support.
 - Lucide-compatible inline icon set with string, DOM and React renderers.
 - Safe link helpers (`safeHref`, `followLink`, `resolveAction`, `configureLinks`) built on `@cubyt/navigation`.
 - React components under `@cubyt/ui/react`.

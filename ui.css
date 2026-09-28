@@ -51,6 +51,7 @@
 
 .cubyt-btn:hover:not(:disabled, [aria-disabled="true"]) {
   background: var(--cubyt-btn-bg-hover);
+  transform: translateY(-1px);
 }
 
 .cubyt-btn:active:not(:disabled, [aria-disabled="true"]) {
@@ -480,6 +481,11 @@
   text-align: left;
   text-decoration: none;
   box-sizing: border-box;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 button.cubyt-list-item,
@@ -491,6 +497,11 @@ button.cubyt-list-item:hover,
 a.cubyt-list-item:hover,
 .cubyt-list-item[data-active="true"] {
   background: var(--ui-surface-soft, #f5f7fa);
+}
+
+button.cubyt-list-item:hover:not(:disabled),
+a.cubyt-list-item:hover {
+  transform: translateX(2px);
 }
 
 .cubyt-list-item[aria-selected="true"],
@@ -619,6 +630,7 @@ a.cubyt-list-item:hover,
   .cubyt-btn,
   .cubyt-chip,
   .cubyt-icon-btn,
+  .cubyt-list-item,
   .cubyt-progress__bar {
     transition: none;
   }
