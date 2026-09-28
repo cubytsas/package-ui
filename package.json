@@ -1,6 +1,6 @@
 {
   "name": "@cubyt/ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared UI primitives (buttons, fields, chips, notices, icons, safe links) for Cubyt apps",
   "license": "MIT",
   "repository": {
