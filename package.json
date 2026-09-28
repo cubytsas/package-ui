@@ -1,0 +1,71 @@
+{
+  "name": "@cubyt/ui",
+  "version": "1.0.0",
+  "description": "Shared UI primitives (buttons, fields, chips, notices, icons, safe links) for Cubyt apps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CubytsAS/package-ui.git"
+  },
+  "homepage": "https://github.com/CubytsAS/package-ui#readme",
+  "bugs": {
+    "url": "https://github.com/CubytsAS/package-ui/issues"
+  },
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./react": {
+      "types": "./types/react.d.ts",
+      "import": "./src/react.js",
+      "default": "./src/react.js"
+    },
+    "./ui.css": "./ui.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "types",
+    "ui.css",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "./ui.css"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@cubyt/navigation": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@cubyt/style": "^1.0.0",
+    "react": ">=19"
+  },
+  "peerDependenciesMeta": {
+    "@cubyt/style": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
