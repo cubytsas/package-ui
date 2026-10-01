@@ -5,6 +5,7 @@ import type {
   InputHTMLAttributes,
   ReactElement,
   ReactNode,
+  SelectHTMLAttributes,
   SVGProps,
   TextareaHTMLAttributes,
 } from "react";
@@ -95,6 +96,12 @@ export declare function Textarea(
   },
 ): ReactElement;
 
+export declare function Select(
+  props: SelectHTMLAttributes<HTMLSelectElement> & {
+    ref?: React.Ref<HTMLSelectElement>;
+  },
+): ReactElement;
+
 export type ChipOption<T extends string = string> = {
   value: T;
   label: ReactNode;
@@ -129,6 +136,15 @@ export declare function Notice(props: {
   icon?: IconSlot | false;
   className?: string;
   children?: ReactNode;
+}): ReactElement;
+
+export declare function EmptyState(props: {
+  icon?: IconSlot | false;
+  title: ReactNode;
+  description?: ReactNode;
+  action?: ReactNode;
+  children?: ReactNode;
+  className?: string;
 }): ReactElement;
 
 export type KeyValueItem = {

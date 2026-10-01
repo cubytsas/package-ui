@@ -252,6 +252,14 @@ export function Textarea({ className, ...rest }) {
   return h("textarea", { ...rest, className: cx("cubyt-textarea", className) });
 }
 
+export function Select({ className, children, ...rest }) {
+  return h(
+    "span",
+    { className: "cubyt-select-wrap" },
+    h("select", { ...rest, className: cx("cubyt-select", className) }, children),
+  );
+}
+
 export function ChipGroup({
   options,
   value,
@@ -321,6 +329,20 @@ export function Notice({ tone = "info", title, icon, className, children }) {
       title ? h("p", { className: "cubyt-notice__title" }, title) : null,
       children ? h("div", { className: "cubyt-notice__text" }, children) : null,
     ),
+  );
+}
+
+export function EmptyState({ icon = "search", title, description, action, className, children }) {
+  const titleId = useId();
+  return h(
+    "section",
+    { className: cx("cubyt-empty-state", className), "aria-labelledby": titleId, role: "status" },
+    icon ? h("span", { className: "cubyt-empty-state__icon", "aria-hidden": true }, renderIcon(icon, 20)) : null,
+    h("h3", { id: titleId, className: "cubyt-empty-state__title" }, title),
+    description ? h("p", { className: "cubyt-empty-state__description" }, description) : null,
+    action || children
+      ? h("div", { className: "cubyt-empty-state__action" }, action ?? children)
+      : null,
   );
 }
 

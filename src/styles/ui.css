@@ -199,6 +199,24 @@
   color: var(--ui-danger, #b42318);
 }
 
+.cubyt-select-wrap {
+  position: relative;
+  display: block;
+}
+
+.cubyt-select-wrap::after {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--ui-muted, #647084);
+  border-bottom: 1.5px solid var(--ui-muted, #647084);
+  content: "";
+  pointer-events: none;
+  transform: translateY(-70%) rotate(45deg);
+}
+
 .cubyt-input,
 .cubyt-textarea,
 .cubyt-select {
@@ -215,6 +233,16 @@
     border-color 140ms ease,
     box-shadow 140ms ease,
     background-color 140ms ease;
+}
+
+.cubyt-select {
+  appearance: none;
+  padding-right: 38px;
+}
+
+.cubyt-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
 }
 
 .cubyt-textarea {
@@ -237,7 +265,8 @@
 }
 
 .cubyt-input[aria-invalid="true"],
-.cubyt-textarea[aria-invalid="true"] {
+.cubyt-textarea[aria-invalid="true"],
+.cubyt-select[aria-invalid="true"] {
   border-color: var(--ui-danger, #b42318);
   box-shadow: 0 0 0 3px var(--ui-danger-soft, #fef3f2);
 }
@@ -365,6 +394,44 @@
 
   color: var(--ui-danger-ink, #912018);
 }
+
+/* Empty results and first-run states */
+
+.cubyt-empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  padding: clamp(24px, 5vw, 44px) 20px;
+  border: 1px dashed var(--ui-border, #e5e9ee);
+  border-radius: var(--brand-radius-md, 14px);
+  background: var(--ui-surface-soft, #f5f7fa);
+  text-align: center;
+}
+
+.cubyt-empty-state__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--ui-surface, #ffffff);
+  color: var(--ui-muted, #647084);
+}
+
+.cubyt-empty-state__title {
+  margin: 2px 0 0;
+  color: var(--ui-ink-strong, #111111);
+  font: 600 15px/1.35 var(--brand-font-sans, system-ui, sans-serif);
+}
+
+.cubyt-empty-state__description {
+  max-width: 440px;
+  margin: 0;
+  color: var(--ui-muted, #647084);
+  font: 400 13px/1.5 var(--brand-font-sans, system-ui, sans-serif);
+}
+
+.cubyt-empty-state__action { margin-top: 5px; }
 
 /* Key/value rows */
 

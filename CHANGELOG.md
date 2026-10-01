@@ -2,6 +2,19 @@
 
 All notable changes to `@cubyt/ui` are documented here.
 
+## [1.1.0] - 2026-10-01
+
+### Added
+
+- `Select` for a styled native select control.
+- `EmptyState` for consistent first-run and no-results views.
+- Repository and component contribution guidance.
+
+### Changed
+
+- Moved `ui.css` under `src/styles/` while preserving the public `@cubyt/ui/ui.css` import.
+- Simplified the README to focus on setup and component use.
+
 ## [1.0.1] - 2026-09-28
 
 ### Changed
