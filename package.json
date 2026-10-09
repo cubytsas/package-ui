@@ -1,15 +1,15 @@
 {
   "name": "@cubyt/ui",
   "version": "1.1.0",
-  "description": "Shared UI primitives (buttons, fields, chips, notices, icons, safe links) for Cubyt Sas products",
+  "description": "Official, modular Cubyt UI primitives including accessible custom dropdowns and token-based components",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cubytsas/package-ui.git"
   },
-  "homepage": "https://github.com/cubytsas/package-ui#readme",
+  "homepage": "https://github.com/CubytsAS/package-ui#readme",
   "bugs": {
-    "url": "https://github.com/cubytsas/package-ui/issues"
+    "url": "https://github.com/CubytsAS/package-ui/issues"
   },
   "type": "module",
   "main": "./src/index.js",
@@ -25,19 +25,20 @@
       "import": "./src/react.js",
       "default": "./src/react.js"
     },
-    "./ui.css": "./src/styles/ui.css",
+    "./ui.css": "./ui.css",
     "./package.json": "./package.json"
   },
   "files": [
     "src",
     "types",
+    "ui.css",
     "README.md",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE"
   ],
   "sideEffects": [
-    "./src/styles/ui.css"
+    "./ui.css"
   ],
   "scripts": {
     "test": "node --test",
@@ -47,14 +48,18 @@
     "@cubyt/navigation": "^1.0.0"
   },
   "peerDependencies": {
-    "@cubyt/style": "^1.0.0",
-    "react": ">=19"
+    "@cubyt/style": "^1.2.0",
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "peerDependenciesMeta": {
     "@cubyt/style": {
       "optional": true
     },
     "react": {
+      "optional": true
+    },
+    "react-dom": {
       "optional": true
     }
   },
