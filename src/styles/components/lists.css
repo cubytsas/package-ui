@@ -1,0 +1,105 @@
+/* List items (action menus, selects, lists) */
+
+.cubyt-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--brand-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cubyt-list__separator {
+  height: 1px;
+  margin: var(--brand-space-1) var(--brand-space-3);
+  background: var(--ui-border-subtle);
+}
+
+.cubyt-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--brand-space-3);
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--brand-radius-sm);
+  background: transparent;
+  color: var(--ui-ink-strong);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition:
+    background-color var(--brand-duration-fast) ease,
+    color var(--brand-duration-fast) ease;
+}
+
+button.cubyt-list-item,
+a.cubyt-list-item {
+  cursor: pointer;
+}
+
+button.cubyt-list-item:hover,
+a.cubyt-list-item:hover,
+.cubyt-list-item[data-active="true"] {
+  background: var(--ui-hover-strong);
+}
+
+.cubyt-list-item[aria-selected="true"],
+.cubyt-list-item[aria-checked="true"] {
+  background: var(--ui-selected);
+  color: var(--ui-selected-ink);
+}
+
+.cubyt-list-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cubyt-list-item__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: var(--brand-radius-sm);
+  background: var(--ui-surface-raised);
+  color: var(--ui-ink);
+}
+
+.cubyt-list-item__copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--brand-space-1);
+  min-width: 0;
+}
+
+.cubyt-list-item__label {
+  font: 600 var(--brand-text-sm)/var(--brand-leading-snug) var(--brand-font-sans);
+}
+
+.cubyt-list-item__description {
+  overflow: hidden;
+  color: var(--ui-muted);
+  font: 400 var(--brand-text-xs)/var(--brand-leading-normal) var(--brand-font-sans);
+  text-overflow: ellipsis;
+}
+
+.cubyt-list-item__trailing {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--brand-space-2);
+  color: var(--ui-muted);
+  font: 500 var(--brand-text-sm)/var(--brand-leading-snug) var(--brand-font-sans);
+}
+
+.cubyt-list-item--danger,
+.cubyt-list-item--danger .cubyt-list-item__icon {
+  color: var(--ui-danger);
+}
+
+.cubyt-list-item--danger .cubyt-list-item__icon {
+  background: var(--ui-danger-soft);
+}

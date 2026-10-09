@@ -3,6 +3,7 @@ import type {
   ButtonHTMLAttributes,
   CSSProperties,
   InputHTMLAttributes,
+  HTMLAttributes,
   ReactElement,
   ReactNode,
   SelectHTMLAttributes,
@@ -99,6 +100,45 @@ export declare function Textarea(
 export declare function Select(
   props: SelectHTMLAttributes<HTMLSelectElement> & {
     ref?: React.Ref<HTMLSelectElement>;
+  },
+): ReactElement;
+
+export type DropdownOption<T extends string = string> = {
+  value: T;
+  label: ReactNode;
+  disabled?: boolean;
+};
+
+export declare function DropdownSelect<T extends string = string>(
+  props: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "value" | "onChange"> & {
+    value?: T;
+    options: DropdownOption<T>[];
+    onChange?: (value: T, option: DropdownOption<T>) => void;
+    ariaLabel?: string;
+    placeholder?: ReactNode;
+    variant?: "plain" | "outlined";
+    placement?: "auto" | "top" | "bottom";
+    align?: "start" | "end";
+    triggerClassName?: string;
+    menuClassName?: string;
+    optionClassName?: string;
+    container?: Element | DocumentFragment | null;
+  },
+): ReactElement;
+
+export declare function Tooltip(props: {
+  label: string;
+  children: ReactElement;
+  className?: string;
+  placement?: "auto" | "top" | "bottom";
+}): ReactElement;
+
+export declare function MenuPanel(props: HTMLAttributes<HTMLDivElement>): ReactElement;
+
+export declare function MenuOption(
+  props: ButtonHTMLAttributes<HTMLButtonElement> & {
+    selected?: boolean;
+    ref?: React.Ref<HTMLButtonElement>;
   },
 ): ReactElement;
 

@@ -1,0 +1,19 @@
+.cubyt-tooltip-anchor { display: inline-flex; }
+
+.cubyt-tooltip {
+  position: fixed;
+  z-index: var(--ui-z-tooltip);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 6px var(--brand-space-2);
+  border-radius: var(--brand-radius-sm);
+  background: var(--ui-tooltip);
+  color: var(--ui-tooltip-ink);
+  box-shadow: var(--ui-shadow-overlay);
+  font: 500 var(--brand-text-xs)/var(--brand-leading-snug) var(--brand-font-sans);
+  text-align: center;
+  pointer-events: none;
+}
+
+dialog[open] > .cubyt-tooltip { z-index: 1; }

@@ -2,18 +2,21 @@
 
 All notable changes to `@cubyt/ui` are documented here.
 
-## [1.1.0] - 2026-10-01
+## [1.1.0] - 2026-10-09
 
 ### Added
 
 - `Select` for a styled native select control.
 - `EmptyState` for consistent first-run and no-results views.
 - Repository and component contribution guidance.
+- Viewport-aware, keyboard-accessible `DropdownSelect` with custom listbox styling and modal-safe portal placement.
+- Component styles split into focused CSS modules and React primitives split into per-component modules behind the stable `@cubyt/ui/react` entry point.
 
 ### Changed
 
-- Moved `ui.css` under `src/styles/` while preserving the public `@cubyt/ui/ui.css` import.
-- Simplified the README to focus on setup and component use.
+- Rebased primitives on `@cubyt/style@1.2.0` tokens for themes, spacing, typography, surfaces, hover and selected states.
+- Removed list-item hover movement and use a consistent visible hover fill without adding hover borders.
+- Updated package peers to the official `@cubyt/style` 1.2.0 release line.
 
 ## [1.0.1] - 2026-09-28
 
